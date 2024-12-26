@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --header-color: #10375c;
+    --primary-color: #2e80ce;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -9,4 +14,166 @@ html {
 body {
     font-family: "Sora", sans-serif;
     font-size: 1.6rem;
+}
+
+/* Common */
+.container {
+    width: 1170px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    --height: 60px;
+
+    display: inline-block;
+    min-width: 205px;
+    height: var(--height);
+    line-height: 60px;
+    border-radius: 30px;
+    padding: 0 20px;
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/* Header */
+.header {
+    /* Nếu muốn dùng sticky thì chuyển phần min-height xuống hero*/
+    min-height: 100vh;
+    background: var(--header-color);
+    padding-top: 30px;
+}
+
+/* .header__fixed {
+    position: sticky;
+    top: -22px;
+    z-index: 1;
+} */
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1rem;
+    position: relative;
+    display: inline-flex;
+}
+
+.logo__circle::before,
+.logo__circle::after {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.logo__circle::before {
+    /* Dùng em trong phần logo này là vì mình dùng css để làm logo nên dùng em để khi khách hàng yêu cầu cho Logo nhỏ đi hay lớn lên thì chỉ cần sửa cái Font-size của phần logo */
+    width: 3em;
+    height: 3em;
+    background: var(--primary-color);
+}
+
+.logo__circle::after {
+    position: absolute;
+    top: 1.1em;
+    left: 1.1em;
+    width: 1.6em;
+    height: 1.6em;
+    background: #fff;
+    z-index: 1;
+}
+
+.logo__text {
+    color: #fff;
+    margin-left: 0.6em;
+    text-align: right;
+    line-height: 1.6em;
+}
+
+.logo__brand {
+    display: block;
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+.logo__brand--small {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* Navbar */
+.navbar__list {
+    display: flex;
+}
+
+.navbar__link {
+    padding: 4px 21px;
+    color: #c9d2da;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.75; /* 175% */
+}
+
+.navbar__link--active {
+    position: relative;
+    color: #fff;
+    font-size: 1.6rem;
+    text-shadow: 1px 0 0 currentColor;
+    line-height: 1.75; /* 175% */
+}
+
+.navbar__link--active::before {
+    position: absolute;
+    content: "";
+    left: 8px;
+    top: 11px;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.navbar__link:hover {
+    color: #fff;
+    text-shadow: 1px 0 0 currentColor;
+}
+
+.action__login {
+    color: #c9d2da;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.75; /* 175% */
+}
+
+.action__login:hover {
+    text-decoration: underline;
+}
+
+.action__signup {
+    display: inline-block;
+    color: #fff;
+    min-width: 104px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 28px;
 }
