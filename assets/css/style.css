@@ -544,3 +544,49 @@ a {
 .member__control-next-icon {
     rotate: 180deg;
 }
+
+/* Install app */
+.install {
+    margin-top: 180px;
+}
+
+.install__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primary-color);
+    border-radius: 4px;
+    padding: 0 70px;
+}
+
+.install__img {
+    display: block;
+    width: 284px;
+    height: 522px;
+    object-fit: cover;
+    margin-top: -95px;
+}
+
+.install_content {
+    max-width: 586px;
+}
+
+.install__heading {
+    max-width: 489px;
+    color: #fff;
+}
+
+.install__desc {
+    width: 586px;
+    color: #fff;
+}
+
+.install__row {
+    display: flex;
+    margin-top: 38px;
+    column-gap: 28px;
+}
+
+.install__btn:hover {
+    opacity: 0.9;
+}
